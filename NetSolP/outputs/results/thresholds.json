@@ -1,0 +1,13 @@
+{
+  "fold_thresholds": {
+    "0": 0.77734375,
+    "1": 0.6875,
+    "2": 0.60986328125,
+    "3": 0.61865234375,
+    "4": 0.58447265625
+  },
+  "monitor": "val_loss",
+  "mode": "min",
+  "fold_message": "Using original fold column 'Partition' from PSI_Biology_solubility_trainset.csv.",
+  "mean_youden_threshold": 0.65556640625
+}

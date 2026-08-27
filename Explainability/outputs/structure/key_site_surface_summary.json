@@ -1,0 +1,102 @@
+{
+  "metadata_csv": "3Dstructure\\structure_query_preparation\\correct_to_wrong_2500\\plmsol_correct_to_wrong_2500_metadata.csv",
+  "fasta": "3Dstructure\\structure_query_preparation\\correct_to_wrong_2500\\plmsol_correct_to_wrong_2500.fasta",
+  "key_sites_csv": "masked_sigmoid_shift_analysis_transformer_2500\\all_correct_to_wrong_2500.csv",
+  "afdb_summary_csv": "3Dstructure\\afdb_correct_to_wrong_2500_structures\\afdb_download_summary.csv",
+  "pdb_dir": "3Dstructure\\afdb_correct_to_wrong_2500_structures",
+  "output_csv": "results\\correct_to_wrong_2500_structure_analysis\\key_site_surface_analysis.csv",
+  "metadata_proteins": 566,
+  "proteins_in_afdb_summary": 511,
+  "pdb_files_indexed": 483,
+  "proteins_with_downloaded_afdb_structure_in_metadata": 483,
+  "surface_rsa_threshold": 0.25,
+  "abs_delta_threshold": 0.05,
+  "probe_radius_angstrom": 1.4,
+  "sphere_points_per_atom": 32,
+  "statistics_all_sites": {
+    "key_site_rows_total": 6240,
+    "key_site_rows_for_metadata": 6240,
+    "key_site_rows_unmatched_to_metadata": 0,
+    "key_site_match_counts": {
+      "protein_id": 6240
+    },
+    "unique_proteins_with_key_sites": 566,
+    "proteins_with_downloaded_afdb_structure": 483,
+    "key_site_surface_call_counts": {
+      "buried": 2063,
+      "no_structure": 888,
+      "surface": 3137,
+      "unmapped": 152
+    },
+    "key_site_mapping_status_counts": {
+      "mapped": 5188,
+      "mapped_aa_mismatch": 12,
+      "no_structure": 888,
+      "site_not_aligned_to_afdb_structure": 152
+    },
+    "key_site_surface_call_counts_for_exact_aa_mapped": {
+      "buried": 2060,
+      "surface": 3128
+    },
+    "key_site_surface_call_counts_for_structure_resolved": {
+      "buried": 2063,
+      "surface": 3137
+    },
+    "structure_resolved_key_sites_surface_plus_buried": 5200,
+    "exact_aa_mapped_key_sites": 5188,
+    "aa_mismatch_but_structure_resolved_key_sites": 12,
+    "structure_resolved_equals_mapped_plus_mismatch": true,
+    "key_site_afdb_download_status_counts": {
+      "downloaded": 5345,
+      "no_afdb_model": 184,
+      "not_in_afdb_summary": 704,
+      "skipped_existing": 7
+    },
+    "proteins_with_at_least_one_surface_key_site": 415,
+    "proteins_where_all_mapped_key_sites_are_surface": 254,
+    "proteins_with_at_least_one_buried_key_site": 183
+  },
+  "statistics_abs_delta_gt_0.05": {
+    "key_site_rows_total": 1906,
+    "key_site_rows_for_metadata": 1906,
+    "key_site_rows_unmatched_to_metadata": 0,
+    "key_site_match_counts": {
+      "protein_id": 1906
+    },
+    "unique_proteins_with_key_sites": 513,
+    "proteins_with_downloaded_afdb_structure": 434,
+    "key_site_surface_call_counts": {
+      "buried": 512,
+      "no_structure": 350,
+      "surface": 906,
+      "unmapped": 138
+    },
+    "key_site_mapping_status_counts": {
+      "mapped": 1417,
+      "mapped_aa_mismatch": 1,
+      "no_structure": 350,
+      "site_not_aligned_to_afdb_structure": 138
+    },
+    "key_site_surface_call_counts_for_exact_aa_mapped": {
+      "buried": 511,
+      "surface": 906
+    },
+    "key_site_surface_call_counts_for_structure_resolved": {
+      "buried": 512,
+      "surface": 906
+    },
+    "structure_resolved_key_sites_surface_plus_buried": 1418,
+    "exact_aa_mapped_key_sites": 1417,
+    "aa_mismatch_but_structure_resolved_key_sites": 1,
+    "structure_resolved_equals_mapped_plus_mismatch": true,
+    "key_site_afdb_download_status_counts": {
+      "downloaded": 1549,
+      "no_afdb_model": 77,
+      "not_in_afdb_summary": 273,
+      "skipped_existing": 7
+    },
+    "proteins_with_at_least_one_surface_key_site": 362,
+    "proteins_where_all_mapped_key_sites_are_surface": 266,
+    "proteins_with_at_least_one_buried_key_site": 121
+  }
+}

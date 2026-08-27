@@ -1,0 +1,57 @@
+{
+  "pipeline": "transformer_2500_string_mask_correct_to_wrong_ranking",
+  "model_type": "ProteinSolubilityTransformer",
+  "model_path": "../PLM_Sol/outputs/checkpoints/transformer_2500maxlen_paper.pt",
+  "model_config": {
+    "batch_size": 4,
+    "epochs": 100,
+    "lr": 0.0001,
+    "weight_decay": 1e-05,
+    "patience": 15,
+    "grad_accum_steps": 4,
+    "num_workers": 16,
+    "pin_memory": true,
+    "use_saved_norm_stats": true,
+    "max_len": 2500,
+    "embed_dim": 1280,
+    "d_model": 256,
+    "nhead": 8,
+    "num_layers": 4,
+    "dim_feedforward": 512,
+    "dropout": 0.1
+  },
+  "verified_max_len": 2500,
+  "train_h5": "../PLM_Sol/embeddings/train_esm2_650m_maxlen2500.h5",
+  "test_h5": "../PLM_Sol/embeddings/test_esm2_650m_maxlen2500.h5",
+  "masked_h5": "masked_embeddings/masked_test_esm2_embeddings_2500.h5",
+  "masked_index_csv": "masked_embeddings/masked_test_esm2_index_2500.csv",
+  "normalization_stats": "../PLM_Sol/embeddings/train_norm_stats.npz",
+  "mask_strategy": "literal_<mask>_before_esm2",
+  "recorded_transitions": [
+    "baseline_correct_and_masked_incorrect",
+    "baseline_incorrect_and_masked_correct"
+  ],
+  "ranking_formula": "mean(abs_delta | amino_acid, label=1, correct_to_wrong) - mean(abs_delta | amino_acid, label=0, correct_to_wrong)",
+  "ranking_uses": "correct_to_wrong_only",
+  "counters": {
+    "index_rows": 1005929,
+    "baseline_correct_rows": 782901,
+    "baseline_wrong_rows": 223028,
+    "missing_baseline_rows": 0,
+    "correct_to_wrong": 6240,
+    "correct_to_correct": 776661,
+    "wrong_to_correct": 5873,
+    "wrong_to_wrong": 217155
+  },
+  "class_counts": {
+    "correct_to_wrong_y1": 2566,
+    "correct_to_wrong_y0": 3674,
+    "wrong_to_correct_y1": 2253,
+    "wrong_to_correct_y0": 3620
+  },
+  "correct_to_wrong_csv": "outputs/masking/all_correct_to_wrong_2500.csv",
+  "wrong_to_correct_csv": "outputs/masking/all_wrong_to_correct_2500.csv",
+  "ranking_csv": "outputs/masking/amino_acid_ranking_c2w_balanced_2500.csv",
+  "ranking_plot": "outputs/masking/amino_acid_ranking_c2w_balanced_2500.png",
+  "progress_state": "outputs/masking/analysis_progress_2500.json"
+}

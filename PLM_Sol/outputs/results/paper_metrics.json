@@ -1,0 +1,21 @@
+{
+  "checkpoint_path": "outputs/checkpoints/transformer_2500maxlen_paper.pt",
+  "test_loss": 0.5417760196253657,
+  "test_count": 4000,
+  "max_len": 2500,
+  "embed_dim": 1280,
+  "train_h5_path": "embeddings/train_esm2_650m_maxlen2500.h5",
+  "test_h5_path": "embeddings/test_esm2_650m_maxlen2500.h5",
+  "test_acc": 0.75075,
+  "test_precision": 0.7331473733147373,
+  "test_recall": 0.7885,
+  "test_specificity": 0.713,
+  "test_auc": 0.8309285000000001,
+  "test_f1": 0.7598169115875693,
+  "test_mcc": 0.5029354775466747,
+  "test_threshold": 0.5,
+  "test_tn": 1426,
+  "test_fp": 574,
+  "test_fn": 423,
+  "test_tp": 1577
+}

@@ -1,0 +1,12 @@
+{
+  "model_name": "esm2_t33_650M_UR50D",
+  "repr_layer": 33,
+  "embed_dim": 1280,
+  "max_len": 2000,
+  "pad_len": 2000,
+  "splits": {
+    "train": 58138,
+    "valid": 3230,
+    "test": 3230
+  }
+}

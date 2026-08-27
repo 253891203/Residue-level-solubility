@@ -1,0 +1,9 @@
+﻿group,rsa_bin,count,percent,total_with_rsa,mann_whitney_u_p_value_high_vs_low,mann_whitney_u_p_value_positive_vs_low,mann_whitney_u_p_value_negative_vs_low,mann_whitney_u_p_value_positive_vs_negative
+High impact,RSA < 5\%,181,15.509854327335045,1167,5.398674507423263e-08,,,
+High impact,5\% <= RSA < 25\%,231,19.794344473007712,1167,5.398674507423263e-08,,,
+High impact,25\% <= RSA < 50\%,275,23.564695801199655,1167,5.398674507423263e-08,,,
+High impact,RSA >= 50\%,480,41.131105398457585,1167,5.398674507423263e-08,,,
+Low impact,RSA < 5\%,240,15.978695073235686,1502,5.398674507423263e-08,,,
+Low impact,5\% <= RSA < 25\%,333,22.170439414114515,1502,5.398674507423263e-08,,,
+Low impact,25\% <= RSA < 50\%,441,29.360852197070574,1502,5.398674507423263e-08,,,
+Low impact,RSA >= 50\%,488,32.49001331557923,1502,5.398674507423263e-08,,,

@@ -1,0 +1,61 @@
+# Python environments and caches
+.venv/
+venv/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated residue embeddings and model caches
+**/embeddings/
+**/cache/
+**/masked_embeddings/
+**/afdb_structures/
+**/checkpoints/
+**/models/*.pt
+**/pretrained_models/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+pytorch_model.bin
+*.npy
+*.npz
+*.h5
+*.hdf5
+
+# Third-party datasets must be downloaded by each user
+data/**
+!data/README.md
+ESM2/data/**
+ProtT5/data/**
+PLM_Sol/data/**
+NetSolP/data/**
+PROTSOLM/data_PDBSol/**
+PROTSOLM/data_ExternalTest/**
+FGNNSol/dataset/**
+FGNNSol/prepared/**
+
+# Runtime artifacts
+*.log
+*.pid
+*.tmp
+*.bak
+*~
+
+# Large packaging archives are release artifacts, not source files
+*.tar
+*.tar.gz
+*.zip
+*.7z
+*.rar
+
+# Experiment tracking and generic local caches
+**/.cache/
+**/wandb/
+**/runs/

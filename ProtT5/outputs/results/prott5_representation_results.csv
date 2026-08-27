@@ -1,0 +1,17 @@
+representation,representation_type,reduce_dim,input_dim,val_accuracy,test_accuracy,test_f1,test_mcc,used_in_paper_table,used_in_paper_figure,paper_reported_accuracy,paper_reported_f1,paper_metric_match,checkpoint,source_run,notes
+F,F,,1024,0.67325,0.70825,0.7404936624416277,0.4299879053214467,true,false,0.7083,0.7405,true,outputs/checkpoints/F_best.pt,results_uniref50,Paper values are the four-decimal rounding of this server result.
+S,S,,500,0.57275,0.5815,0.6744457409568262,0.19855044547121498,true,false,0.5815,0.6744,true,outputs/checkpoints/S_best.pt,results_uniref50,Paper values are the four-decimal rounding of this server result.
+P-1,P,1,500,0.57475,0.60475,0.6905460951262478,0.25174729333470214,false,false,,,not_applicable,outputs/checkpoints/P1_best.pt,results_uniref50,
+P-2,P,2,1000,0.59575,0.62325,0.6962305986696231,0.28107352598714425,false,true,,,not_applicable,outputs/checkpoints/P2_best.pt,results_uniref50,
+P-4,P,4,2000,0.63425,0.63575,0.6708832166252541,0.2779077000973969,false,true,,,not_applicable,outputs/checkpoints/P4_best.pt,results_uniref50,
+P-6,P,6,3000,0.634,0.64825,0.6854460093896714,0.3051568453905696,false,true,,,not_applicable,outputs/checkpoints/P6_best.pt,results_uniref50,
+P-8,P,8,4000,0.62075,0.65375,0.6936518469365185,0.3184964572891272,true,true,0.6538,0.6937,true,outputs/checkpoints/P8_best.pt,results_uniref50,Paper values are the four-decimal rounding of this server result.
+P-16,P,16,8000,0.64125,0.6555,0.7106257874842503,0.3363707512968649,false,true,,,not_applicable,outputs/checkpoints/P16_best.pt,results_mlp_p16_p32,
+P-32,P,32,16000,0.633,0.653,0.7177714518096787,0.34442538138863404,false,true,,,not_applicable,outputs/checkpoints/P32_best.pt,results_mlp_p16_p32,
+N-1,N,1,500,0.67525,0.6975,0.7338319401671799,0.41059692102601075,false,false,,,not_applicable,outputs/checkpoints/N1_best.pt,results_uniref50,
+N-2,N,2,1000,0.65875,0.68775,0.7295951504654687,0.39488928393963996,false,true,,,not_applicable,outputs/checkpoints/N2_best.pt,results_uniref50,
+N-4,N,4,2000,0.66775,0.70025,0.7332591768631813,0.41336051644704436,false,true,,,not_applicable,outputs/checkpoints/N4_best.pt,results_uniref50,
+N-6,N,6,3000,0.669,0.70425,0.7227560346847902,0.41218958601158473,false,true,,,not_applicable,outputs/checkpoints/N6_best.pt,results_uniref50,
+N-8,N,8,4000,0.6675,0.699,0.7306487695749441,0.40946697086927497,false,true,,,not_applicable,outputs/checkpoints/N8_best.pt,results_uniref50,
+N-16,N,16,8000,0.67,0.70975,0.7426291287962757,0.4339016040116131,false,true,,,not_applicable,outputs/checkpoints/N16_best.pt,results_mlp_n_search,Fixed baseline configuration extracted from the later run; no search code is published.
+N-32,N,32,16000,0.674,0.7125,0.744103248776146,0.4385894847712274,true,true,0.7125,0.7441,true,outputs/checkpoints/N32_best.pt,results_mlp_n32_once,Paper values match this server checkpoint.

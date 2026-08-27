@@ -1,0 +1,70 @@
+{
+  "train": {
+    "path": "data/netsolp/PSI_Biology_solubility_trainset.csv",
+    "rows": 11226,
+    "columns": [
+      "sid",
+      "solublility|0=Insoluble|1=Soluble",
+      "fasta",
+      "Partition"
+    ],
+    "sequence_column": "fasta",
+    "label_column": "solublility|0=Insoluble|1=Soluble",
+    "id_column": "sid",
+    "fold_column": "Partition",
+    "label_distribution": {
+      "0": 3726,
+      "1": 7500
+    },
+    "label_semantics": "1=soluble, 0=insoluble",
+    "fold_distribution": {
+      "0": 2943,
+      "1": 2284,
+      "2": 2249,
+      "3": 1912,
+      "4": 1838
+    }
+  },
+  "NESG_test": {
+    "path": "data/netsolp/NESG_testset.csv",
+    "rows": 1323,
+    "columns": [
+      "Unnamed: 0",
+      "sid",
+      "fasta",
+      "exp",
+      "sol",
+      "solubility"
+    ],
+    "sequence_column": "fasta",
+    "label_column": "solubility",
+    "id_column": "sid",
+    "fold_column": null,
+    "label_distribution": {
+      "0": 481,
+      "1": 842
+    },
+    "label_semantics": "1=soluble, 0=insoluble"
+  },
+  "sequence_length_stats": {
+    "train": {
+      "n": 11226,
+      "min": 31,
+      "max": 810,
+      "mean": 222.59887760555853,
+      "median": 191.0,
+      "p95": 477.0
+    },
+    "NESG_test": {
+      "n": 1323,
+      "min": 50,
+      "max": 599,
+      "mean": 223.4731670445956,
+      "median": 206.0,
+      "p95": 436.0
+    },
+    "note": "All sequences are retained. No filtering or truncation is performed by this check."
+  },
+  "fold_message": "Found original fold column 'Partition' and will use it: {0: 2943, 1: 2284, 2: 2249, 3: 1912, 4: 1838}",
+  "independent_test_rule": "NESG_testset.csv is reserved for final independent testing only."
+}

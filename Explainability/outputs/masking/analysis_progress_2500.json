@@ -1,0 +1,25 @@
+{
+  "status": "complete",
+  "processed_index_rows": 1005929,
+  "run_signature": {
+    "masked_h5": "masked_embeddings/masked_test_esm2_embeddings_2500.h5",
+    "masked_index_csv": "masked_embeddings/masked_test_esm2_index_2500.csv",
+    "model_path": "../PLM_Sol/outputs/checkpoints/transformer_2500maxlen_paper.pt",
+    "threshold": 0.5,
+    "target_length": 2500
+  },
+  "counters": {
+    "index_rows": 1005929,
+    "baseline_correct_rows": 782901,
+    "baseline_wrong_rows": 223028,
+    "missing_baseline_rows": 0,
+    "correct_to_wrong": 6240,
+    "correct_to_correct": 776661,
+    "wrong_to_correct": 5873,
+    "wrong_to_wrong": 217155
+  },
+  "correct_to_wrong_csv": "outputs/masking/all_correct_to_wrong_2500.csv",
+  "wrong_to_correct_csv": "outputs/masking/all_wrong_to_correct_2500.csv",
+  "ranking_csv_c2w_only": "outputs/masking/amino_acid_ranking_c2w_balanced_2500.csv",
+  "saved_unix_time": 1785248472.4993892
+}

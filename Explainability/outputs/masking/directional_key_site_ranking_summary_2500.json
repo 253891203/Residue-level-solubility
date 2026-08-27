@@ -1,0 +1,27 @@
+{
+  "pipeline": "transformer_2500_directional_key_site_postprocessing",
+  "runs_masked_inference": false,
+  "baseline_predictions": "computed",
+  "baseline_cache": "outputs/masking/baseline_predictions_directional_2500.csv",
+  "normalization_stats": "../PLM_Sol/embeddings/train_norm_stats.npz",
+  "model_path": "../PLM_Sol/outputs/checkpoints/transformer_2500maxlen_paper.pt",
+  "threshold": 0.5,
+  "masked_index_csv": "masked_embeddings/masked_test_esm2_index_2500.csv",
+  "correct_to_wrong_csv": "outputs/masking/all_correct_to_wrong_2500.csv",
+  "denominator_definition": "all tested occurrences of the amino acid within baseline-correct proteins, calculated separately for y=1 and y=0",
+  "directional_importance_soluble_formula": "sum(abs_delta | C2W, amino_acid, y=1) / count(all tested occurrences | amino_acid, y=1, baseline_correct)",
+  "directional_importance_insoluble_formula": "sum(abs_delta | C2W, amino_acid, y=0) / count(all tested occurrences | amino_acid, y=0, baseline_correct)",
+  "net_directional_score_formula": "directional_importance_soluble - directional_importance_insoluble",
+  "counters": {
+    "index_rows": 1005929,
+    "baseline_correct_rows": 782901,
+    "baseline_wrong_rows": 223028,
+    "noncanonical_correct_rows": 0,
+    "missing_baseline_rows": 0
+  },
+  "c2w_rows": 6240,
+  "canonical_c2w_rows": 6240,
+  "ranking": "H > D > E > G > S > Q > K > W > Y > L > R > N > F > T > V > A > P > C > I > M",
+  "ranking_csv": "outputs/masking/directional_key_site_ranking_2500.csv",
+  "ranking_plot": "outputs/masking/directional_key_site_ranking_2500.png"
+}
