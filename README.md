@@ -176,14 +176,20 @@ The manuscript structure figure (`overall_framework.png`) is not required to run
 
 ## License and third-party materials
 
-No repository-wide software license has yet been selected. Add the authors' chosen license before public release. Any future repository license must cover original code/documentation only and must not be presented as relicensing UESolDS, PSI Biology, NESG, PDBSol, eSOL/FGNNSol data, pretrained encoders, or other third-party materials.
+Original source code and documentation in this repository are released under the [MIT License](LICENSE), copyright (c) 2026 Junhao Peng.
+
+This license does not relicense UESolDS, PSI Biology, NESG, PDBSol, eSOL/FGNNSol data, pretrained ESM2/ProtT5 models, upstream project code, or any other third-party material. Those resources remain subject to the licenses and terms specified by their original providers.
 
 ## Citation
 
+The associated manuscript has not yet been formally published. The journal citation and DOI will be added here after publication. Until then, please cite this software repository as:
+
 ```bibtex
-@article{peng_residue_solubility,
-  title   = {Simple yet Effective: The Critical Role of Residue-Level Information in Protein Solubility Prediction},
+@software{peng_2026_residue_level_solubility,
+  title   = {Residue-level-solubility},
   author  = {Peng, Junhao and Hao, Xinru and Liang, Zhi and Zhang, Sihai},
-  note    = {Manuscript}
+  year    = {2026},
+  url     = {https://github.com/253891203/Residue-level-solubility},
+  note    = {GitHub repository; associated manuscript in preparation}
 }
 ```
