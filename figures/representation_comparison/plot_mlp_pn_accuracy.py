@@ -60,10 +60,10 @@ def plot_mlp_pn_accuracy(output_path: Path) -> None:
         {
             "font.family": "serif",
             "font.size": 10,
-            "axes.labelsize": 11,
-            "legend.fontsize": 8.8,
-            "xtick.labelsize": 9,
-            "ytick.labelsize": 9,
+            "axes.labelsize": 12,
+            "legend.fontsize": 10,
+            "xtick.labelsize": 10.5,
+            "ytick.labelsize": 10.5,
             "axes.spines.top": False,
             "axes.spines.right": False,
             "pdf.fonttype": 42,
@@ -71,7 +71,7 @@ def plot_mlp_pn_accuracy(output_path: Path) -> None:
         }
     )
 
-    figure, axis = plt.subplots(figsize=(6.8, 4.6), dpi=220)
+    figure, axis = plt.subplots(figsize=(4.6, 3.9), dpi=220)
     model_styles = {"ProtT5": {"color": "#4C78A8"}, "ESM2": {"color": "#E45756"}}
     f_line_colors = {"ProtT5": "#2F5F98", "ESM2": model_styles["ESM2"]["color"]}
     representation_results = {"N": MLP_N_RESULTS, "P": MLP_P_RESULTS}
@@ -79,27 +79,37 @@ def plot_mlp_pn_accuracy(output_path: Path) -> None:
         "N": {"marker": "s", "linestyle": "-"},
         "P": {"marker": "o", "linestyle": "--"},
     }
-    model_x_offsets = {"ProtT5": -0.09, "ESM2": 0.09}
+    model_x_offsets = {"ProtT5": -0.12, "ESM2": 0.12}
     representation_x_offsets = {"P": -0.025, "N": 0.025}
     dimension_positions = {
         dimension: index for index, dimension in enumerate(DISPLAY_DIMENSIONS)
     }
     annotation_offsets = {
         ("N", "ProtT5"): 8,
-        ("N", "ESM2"): -10,
-        ("P", "ProtT5"): -10,
+        ("N", "ESM2"): -9,
+        ("P", "ProtT5"): -9,
         ("P", "ESM2"): 8,
     }
     special_annotation_offsets = {
-        ("N", "ProtT5", 2): (10, 10),
-        ("N", "ProtT5", 6): (0, -13),
-        ("N", "ESM2", 6): (0, 10),
+        ("N", "ProtT5", 2): (8, 11),
+        ("N", "ESM2", 2): (10, -4),
+        ("N", "ProtT5", 4): (-6, 3),
+        # Keep the K=6 N labels close to their points so they do not meet midway.
+        ("N", "ProtT5", 6): (-5, -5),
+        ("N", "ESM2", 6): (5, 5),
+        ("N", "ProtT5", 8): (0, -4),
+        ("N", "ESM2", 8): (2, -7),
         ("N", "ESM2", 16): (0, 10),
         ("N", "ESM2", 32): (0, 10),
-        ("P", "ProtT5", 2): (10, -11),
-        ("P", "ProtT5", 8): (0, 11),
-        ("P", "ESM2", 8): (0, -11),
-        ("P", "ESM2", 32): (0, -11),
+        ("P", "ProtT5", 2): (10, -10),
+        # The K=6 P labels are placed outside the two nearby curves.
+        ("P", "ProtT5", 6): (0, 10),
+        ("P", "ESM2", 6): (0, -10),
+        # These two nearby K=8 labels are placed away from each other.
+        ("P", "ProtT5", 8): (0, 10),
+        ("P", "ESM2", 8): (0, -10),
+        ("P", "ESM2", 16): (-2, 4),
+        ("P", "ESM2", 32): (0, -10),
     }
 
     for representation, results in representation_results.items():
@@ -113,8 +123,8 @@ def plot_mlp_pn_accuracy(output_path: Path) -> None:
             axis.plot(
                 x_positions,
                 values["test_accuracy"],
-                linewidth=2.0,
-                markersize=6,
+                linewidth=2.2,
+                markersize=5.5,
                 marker=representation_styles[representation]["marker"],
                 linestyle=representation_styles[representation]["linestyle"],
                 **model_styles[model],
@@ -133,7 +143,7 @@ def plot_mlp_pn_accuracy(output_path: Path) -> None:
                     textcoords="offset points",
                     ha="center",
                     va="bottom" if y_offset > 0 else "top",
-                    fontsize=7.8,
+                    fontsize=9,
                 )
 
     for model, accuracy in F_REPRESENTATION_ACCURACY.items():
@@ -142,11 +152,11 @@ def plot_mlp_pn_accuracy(output_path: Path) -> None:
             accuracy,
             color=color,
             linestyle="--",
-            linewidth=1.6,
+            linewidth=2.2,
             alpha=1.0,
             zorder=1,
         )
-        y_offset = 7 if model == "ProtT5" else -7
+        y_offset = 7 if model == "ProtT5" else -14
         axis.annotate(
             f"{model} F = {accuracy:.4f}",
             xy=(0.015, accuracy),
@@ -154,7 +164,7 @@ def plot_mlp_pn_accuracy(output_path: Path) -> None:
             xytext=(0, y_offset),
             textcoords="offset points",
             color=color,
-            fontsize=8.2,
+            fontsize=9.5,
             ha="left",
             va="bottom" if y_offset > 0 else "top",
         )
@@ -165,27 +175,28 @@ def plot_mlp_pn_accuracy(output_path: Path) -> None:
         range(len(DISPLAY_DIMENSIONS)),
         [str(dimension) for dimension in DISPLAY_DIMENSIONS],
     )
-    axis.set_xlim(-0.25, len(DISPLAY_DIMENSIONS) - 0.75)
+    axis.set_xlim(-0.42, len(DISPLAY_DIMENSIONS) - 0.58)
     axis.set_ylim(0.608, 0.722)
     axis.grid(axis="y", linestyle="--", linewidth=0.8, alpha=0.3)
     axis.legend(
         handles=[
-            Line2D([0], [0], color=model_styles["ProtT5"]["color"], lw=2, label="ProtT5"),
-            Line2D([0], [0], color=model_styles["ESM2"]["color"], lw=2, label="ESM2"),
-            Line2D([0], [0], color="black", marker="s", linestyle="-", markersize=6, label="N"),
-            Line2D([0], [0], color="black", marker="o", linestyle="--", markersize=6, label="P"),
-            Line2D([0], [0], color="black", linestyle="--", linewidth=1.6, label="F"),
+            Line2D([0], [0], color=model_styles["ProtT5"]["color"], lw=2.2, label="ProtT5"),
+            Line2D([0], [0], color=model_styles["ESM2"]["color"], lw=2.2, label="ESM2"),
+            Line2D([0], [0], color="black", marker="s", linestyle="-", markersize=5.5, label="N"),
+            Line2D([0], [0], color="black", marker="o", linestyle="--", markersize=5.5, label="P"),
+            Line2D([0], [0], color="black", linestyle="--", linewidth=2.2, label="F"),
         ],
         frameon=False,
         loc="upper center",
-        bbox_to_anchor=(0.5, -0.13),
+        bbox_to_anchor=(0.5, -0.23),
         ncol=5,
-        columnspacing=1.4,
-        handletextpad=0.6,
+        columnspacing=0.9,
+        handletextpad=0.45,
+        borderaxespad=0,
     )
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    figure.tight_layout()
-    figure.savefig(output_path, bbox_inches="tight")
+    figure.subplots_adjust(left=0.17, right=0.97, top=0.96, bottom=0.27)
+    figure.savefig(output_path)
     plt.close(figure)
 
 
